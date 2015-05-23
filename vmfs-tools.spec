@@ -1,6 +1,7 @@
+%define _commit %(git rev-parse --short HEAD)
 Name: vmfs-tools
 Version:    %{_ver}
-Release:    1%{?dist}
+Release:    2_%{_commit}%{?dist}
 Summary:    VMFS tools for linux
 
 Group: tbd
@@ -37,6 +38,9 @@ rm -rf %{buildroot}
 %doc
 
 %changelog
+* Tue May 26 2015 Marcus Sorensen <marcus@electron14.com> 0.2.5-2
+   Fix > 1TB pointer lookups
+   Fix RPM to post build # before commit for cleaner version increment
 * Tue May 26 2015 Marcus Sorensen <marcus@electron14.com> 0.2.5-1
    Initial specfile 
    Contains > 256G file read fix (double indirect pointers)

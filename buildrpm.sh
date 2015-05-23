@@ -5,7 +5,7 @@ CWD=`pwd`
 RPMDIR=$CWD/rpmbuild
 GITCOMMIT=`git rev-parse --short HEAD`
 GITVERSION=`git describe --match "v[0-9].*" --abbrev=0 HEAD`
-VERSION=${GITVERSION//v}_${GITCOMMIT}
+VERSION=${GITVERSION//v}
 
 function package() {
     cleanup
