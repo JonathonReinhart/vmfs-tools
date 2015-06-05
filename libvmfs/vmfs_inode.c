@@ -318,7 +318,7 @@ int vmfs_inode_get_block(const vmfs_inode_t *inode,off_t pos,uint32_t *blk_id)
          } else {
             pointer_result = vmfs_sp_get_block(fs, inode, pos, blk_id);
          }
-         if(pointer_result) {
+         if (pointer_result) {
             fprintf(stderr, "Error in resolving pointer block: %d\n",
                               pointer_result);
             return(pointer_result);
